@@ -1,0 +1,3110 @@
+[
+    {
+        "id": 0,
+        "description": "outside",
+        "capacity": -1,
+        "neighbors": [
+            301,
+            306,
+            307,
+            312,
+            313,
+            324,
+            325,
+            326
+        ],
+        "coordinates": [
+            0,
+            0,
+            0
+        ],
+        "area": 0,
+        "room_type": "outside"
+    },
+    {
+        "id": 101,
+        "description": "Space 1 - 1",
+        "capacity": 59,
+        "neighbors": [
+            320,
+            321
+        ],
+        "coordinates": [
+            6.416216216,
+            5.916216216,
+            0.0
+        ],
+        "area": 117.33000000000001,
+        "room_type": "Meeting Room"
+    },
+    {
+        "id": 102,
+        "description": "Space 1 - 2",
+        "capacity": 8,
+        "neighbors": [
+            320,
+            321,
+            326
+        ],
+        "coordinates": [
+            17.4125,
+            2.05,
+            0.0
+        ],
+        "area": 59.44999999999999,
+        "room_type": "Large Office"
+    },
+    {
+        "id": 103,
+        "description": "Space 1 - 3",
+        "capacity": 2,
+        "neighbors": [
+            314
+        ],
+        "coordinates": [
+            2.139393939,
+            22.96666667,
+            0.0
+        ],
+        "area": 18.91999999999999,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 104,
+        "description": "Space 1 - 4",
+        "capacity": 2,
+        "neighbors": [
+            314,
+            315
+        ],
+        "coordinates": [
+            5.985714286,
+            23.3,
+            0.0
+        ],
+        "area": 17.159999999999997,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 105,
+        "description": "Space 1 - 5",
+        "capacity": 2,
+        "neighbors": [
+            315,
+            316
+        ],
+        "coordinates": [
+            12.51428571,
+            23.3,
+            0.0
+        ],
+        "area": 12.760000000000048,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 106,
+        "description": "Space 1 - 6",
+        "capacity": 2,
+        "neighbors": [
+            316
+        ],
+        "coordinates": [
+            15.35714286,
+            23.3,
+            0.0
+        ],
+        "area": 12.759999999999934,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 107,
+        "description": "Space 1 - 7",
+        "capacity": 2,
+        "neighbors": [
+            316
+        ],
+        "coordinates": [
+            18.15,
+            23.3,
+            0.0
+        ],
+        "area": 12.759999999999991,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 108,
+        "description": "Space 1 - 8",
+        "capacity": 2,
+        "neighbors": [
+            316,
+            317
+        ],
+        "coordinates": [
+            21.05,
+            23.3,
+            0.0
+        ],
+        "area": 12.759999999999991,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 109,
+        "description": "Space 1 - 9",
+        "capacity": 2,
+        "neighbors": [
+            317
+        ],
+        "coordinates": [
+            23.95,
+            23.3,
+            0.0
+        ],
+        "area": 12.759999999999934,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 110,
+        "description": "Space 1 - 10",
+        "capacity": 2,
+        "neighbors": [
+            317
+        ],
+        "coordinates": [
+            26.9,
+            23.3,
+            0.0
+        ],
+        "area": 13.200000000000045,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 111,
+        "description": "Space 1 - 11",
+        "capacity": 2,
+        "neighbors": [
+            314
+        ],
+        "coordinates": [
+            1.412121212,
+            18.51818182,
+            0.0
+        ],
+        "area": 16.52000000000001,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 112,
+        "description": "Space 1 - 12",
+        "capacity": 2,
+        "neighbors": [
+            314,
+            315
+        ],
+        "coordinates": [
+            4.4,
+            17.34,
+            0.0
+        ],
+        "area": 12.899999999999991,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 113,
+        "description": "Space 1 - 13",
+        "capacity": 1,
+        "neighbors": [
+            315
+        ],
+        "coordinates": [
+            7.1,
+            18.4,
+            0.0
+        ],
+        "area": 6.599999999999994,
+        "room_type": "Small Office"
+    },
+    {
+        "id": 114,
+        "description": "Space 1 - 14",
+        "capacity": 1,
+        "neighbors": [
+            315,
+            320
+        ],
+        "coordinates": [
+            7.1,
+            16.25,
+            0.0
+        ],
+        "area": 6.299999999999997,
+        "room_type": "Small Office"
+    },
+    {
+        "id": 115,
+        "description": "Space 1 - 15",
+        "capacity": 1,
+        "neighbors": [
+            315,
+            316
+        ],
+        "coordinates": [
+            12.1,
+            18.3,
+            0.0
+        ],
+        "area": 6.399999999999977,
+        "room_type": "Small Office"
+    },
+    {
+        "id": 116,
+        "description": "Space 1 - 16",
+        "capacity": 1,
+        "neighbors": [
+            315,
+            320
+        ],
+        "coordinates": [
+            12.1,
+            16.25,
+            0.0
+        ],
+        "area": 6.719999999999999,
+        "room_type": "Small Office"
+    },
+    {
+        "id": 117,
+        "description": "Space 1 - 17",
+        "capacity": 2,
+        "neighbors": [
+            315,
+            316
+        ],
+        "coordinates": [
+            15.08015873,
+            17.73220339,
+            0.0
+        ],
+        "area": 17.60000000000005,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 118,
+        "description": "Space 1 - 18",
+        "capacity": 2,
+        "neighbors": [
+            316,
+            317
+        ],
+        "coordinates": [
+            19.47741935,
+            17.23072717,
+            0.0
+        ],
+        "area": 16.71999999999997,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 119,
+        "description": "Space 1 - 19",
+        "capacity": 2,
+        "neighbors": [
+            317
+        ],
+        "coordinates": [
+            23.45,
+            17.4,
+            0.0
+        ],
+        "area": 17.160000000000025,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 120,
+        "description": "Space 1 - 20",
+        "capacity": 2,
+        "neighbors": [
+            301,
+            302
+        ],
+        "coordinates": [
+            1.971428571,
+            38.55,
+            0.0
+        ],
+        "area": 17.630000000000038,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 121,
+        "description": "Space 1 - 21",
+        "capacity": 2,
+        "neighbors": [
+            302
+        ],
+        "coordinates": [
+            5.9,
+            38.55,
+            0.0
+        ],
+        "area": 17.629999999999995,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 122,
+        "description": "Space 1 - 22",
+        "capacity": 2,
+        "neighbors": [
+            302,
+            303
+        ],
+        "coordinates": [
+            9.45,
+            38.55,
+            0.0
+        ],
+        "area": 12.470000000000027,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 123,
+        "description": "Space 1 - 23",
+        "capacity": 2,
+        "neighbors": [
+            303,
+            304
+        ],
+        "coordinates": [
+            12.35,
+            38.55,
+            0.0
+        ],
+        "area": 12.470000000000027,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 124,
+        "description": "Space 1 - 24",
+        "capacity": 2,
+        "neighbors": [
+            304
+        ],
+        "coordinates": [
+            15.25,
+            38.55,
+            0.0
+        ],
+        "area": 12.46999999999997,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 125,
+        "description": "Space 1 - 25",
+        "capacity": 2,
+        "neighbors": [
+            304,
+            305
+        ],
+        "coordinates": [
+            18.15,
+            38.55,
+            0.0
+        ],
+        "area": 12.470000000000027,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 126,
+        "description": "Space 1 - 26",
+        "capacity": 2,
+        "neighbors": [
+            305
+        ],
+        "coordinates": [
+            21.05,
+            38.55,
+            0.0
+        ],
+        "area": 12.470000000000027,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 127,
+        "description": "Space 1 - 27",
+        "capacity": 2,
+        "neighbors": [
+            305,
+            306
+        ],
+        "coordinates": [
+            23.95,
+            38.55,
+            0.0
+        ],
+        "area": 12.469999999999914,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 128,
+        "description": "Space 1 - 28",
+        "capacity": 2,
+        "neighbors": [
+            306
+        ],
+        "coordinates": [
+            26.85,
+            38.55,
+            0.0
+        ],
+        "area": 12.470000000000255,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 129,
+        "description": "Space 1 - 29",
+        "capacity": 2,
+        "neighbors": [
+            306
+        ],
+        "coordinates": [
+            29.75,
+            38.55,
+            0.0
+        ],
+        "area": 12.470000000000027,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 130,
+        "description": "Space 1 - 30",
+        "capacity": 2,
+        "neighbors": [
+            306,
+            307
+        ],
+        "coordinates": [
+            32.65,
+            38.55,
+            0.0
+        ],
+        "area": 12.4699999999998,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 131,
+        "description": "Space 1 - 31",
+        "capacity": 2,
+        "neighbors": [
+            301,
+            302
+        ],
+        "coordinates": [
+            1.25,
+            31.95,
+            0.0
+        ],
+        "area": 17.11,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 132,
+        "description": "Space 1 - 32",
+        "capacity": 2,
+        "neighbors": [
+            302
+        ],
+        "coordinates": [
+            4.38,
+            32.48,
+            0.0
+        ],
+        "area": 16.519999999999996,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 133,
+        "description": "Space 1 - 33",
+        "capacity": 2,
+        "neighbors": [
+            302,
+            303
+        ],
+        "coordinates": [
+            7.15,
+            31.8,
+            0.0
+        ],
+        "area": 18.47999999999999,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 134,
+        "description": "Space 1 - 34",
+        "capacity": 2,
+        "neighbors": [
+            303,
+            304
+        ],
+        "coordinates": [
+            12.4,
+            31.95,
+            0.0
+        ],
+        "area": 17.69999999999999,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 135,
+        "description": "Space 1 - 35",
+        "capacity": 2,
+        "neighbors": [
+            304
+        ],
+        "coordinates": [
+            15.35,
+            31.95,
+            0.0
+        ],
+        "area": 17.110000000000014,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 136,
+        "description": "Space 1 - 36",
+        "capacity": 2,
+        "neighbors": [
+            304,
+            305
+        ],
+        "coordinates": [
+            18.2,
+            31.95,
+            0.0
+        ],
+        "area": 16.519999999999982,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 137,
+        "description": "Space 1 - 37",
+        "capacity": 2,
+        "neighbors": [
+            305
+        ],
+        "coordinates": [
+            21.1,
+            31.95,
+            0.0
+        ],
+        "area": 17.699999999999932,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 138,
+        "description": "Space 1 - 38",
+        "capacity": 2,
+        "neighbors": [
+            305,
+            306
+        ],
+        "coordinates": [
+            24.0,
+            31.95,
+            0.0
+        ],
+        "area": 16.520000000000095,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 139,
+        "description": "Space 1 - 39",
+        "capacity": 2,
+        "neighbors": [
+            306
+        ],
+        "coordinates": [
+            26.9,
+            31.95,
+            0.0
+        ],
+        "area": 17.699999999999932,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 140,
+        "description": "Space 1 - 40",
+        "capacity": 2,
+        "neighbors": [
+            306,
+            307
+        ],
+        "coordinates": [
+            30.08,
+            32.24,
+            0.0
+        ],
+        "area": 16.519999999999982,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 141,
+        "description": "Space 1 - 41",
+        "capacity": 2,
+        "neighbors": [
+            306,
+            307
+        ],
+        "coordinates": [
+            32.65,
+            31.2,
+            0.0
+        ],
+        "area": 12.759999999999991,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 142,
+        "description": "Space 1 - 42",
+        "capacity": 5,
+        "neighbors": [
+            320,
+            321
+        ],
+        "coordinates": [
+            13.01891892,
+            8.57027027,
+            0.0
+        ],
+        "area": 34.220000000000006,
+        "room_type": "Large Office"
+    },
+    {
+        "id": 143,
+        "description": "Space 1 - 43",
+        "capacity": 2,
+        "neighbors": [
+            320,
+            321
+        ],
+        "coordinates": [
+            17.58125,
+            8.39375,
+            0.0
+        ],
+        "area": 17.11,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 144,
+        "description": "Space 1 - 44",
+        "capacity": 2,
+        "neighbors": [
+            320,
+            321
+        ],
+        "coordinates": [
+            20.45294118,
+            8.258823529,
+            0.0
+        ],
+        "area": 17.699999999999967,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 145,
+        "description": "Space 1 - 45",
+        "capacity": 2,
+        "neighbors": [
+            320,
+            321
+        ],
+        "coordinates": [
+            23.81212121,
+            7.951515152,
+            0.0
+        ],
+        "area": 16.52000000000004,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 146,
+        "description": "Space 1 - 46",
+        "capacity": 1,
+        "neighbors": [
+            307
+        ],
+        "coordinates": [
+            39.7,
+            38.55,
+            0.0
+        ],
+        "area": 8.600000000000136,
+        "room_type": "Small Office"
+    },
+    {
+        "id": 147,
+        "description": "Space 1 - 47",
+        "capacity": 2,
+        "neighbors": [
+            307,
+            308
+        ],
+        "coordinates": [
+            42.6,
+            38.55,
+            0.0
+        ],
+        "area": 16.339999999999918,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 148,
+        "description": "Space 1 - 48",
+        "capacity": 2,
+        "neighbors": [
+            308
+        ],
+        "coordinates": [
+            46.0,
+            38.55,
+            0.0
+        ],
+        "area": 12.900000000000091,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 149,
+        "description": "Space 1 - 49",
+        "capacity": 2,
+        "neighbors": [
+            308
+        ],
+        "coordinates": [
+            48.95,
+            38.55,
+            0.0
+        ],
+        "area": 12.470000000000027,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 150,
+        "description": "Space 1 - 50",
+        "capacity": 3,
+        "neighbors": [
+            309
+        ],
+        "coordinates": [
+            53.3,
+            38.55,
+            0.0
+        ],
+        "area": 24.939999999999827,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 151,
+        "description": "Space 1 - 51",
+        "capacity": 3,
+        "neighbors": [
+            309,
+            310
+        ],
+        "coordinates": [
+            59.1,
+            38.55,
+            0.0
+        ],
+        "area": 24.940000000000282,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 152,
+        "description": "Space 1 - 52",
+        "capacity": 3,
+        "neighbors": [
+            310,
+            311
+        ],
+        "coordinates": [
+            64.91428571,
+            38.55,
+            0.0
+        ],
+        "area": 24.940000000000055,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 153,
+        "description": "Space 1 - 53",
+        "capacity": 3,
+        "neighbors": [
+            311,
+            313
+        ],
+        "coordinates": [
+            71.14137931,
+            38.42068966,
+            0.0
+        ],
+        "area": 24.509999999999764,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 154,
+        "description": "Space 1 - 54",
+        "capacity": 2,
+        "neighbors": [
+            308,
+            318
+        ],
+        "coordinates": [
+            42.95428571,
+            31.55428571,
+            0.0
+        ],
+        "area": 17.700000000000045,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 155,
+        "description": "Space 1 - 55",
+        "capacity": 2,
+        "neighbors": [
+            308,
+            318
+        ],
+        "coordinates": [
+            48.4,
+            33.52857143,
+            0.0
+        ],
+        "area": 11.599999999999909,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 156,
+        "description": "Space 1 - 56",
+        "capacity": 2,
+        "neighbors": [
+            308,
+            318
+        ],
+        "coordinates": [
+            48.4,
+            30.52857143,
+            0.0
+        ],
+        "area": 12.0,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 157,
+        "description": "Space 1 - 57",
+        "capacity": 2,
+        "neighbors": [
+            308,
+            309
+        ],
+        "coordinates": [
+            51.63030303,
+            31.80606061,
+            0.0
+        ],
+        "area": 17.110000000000127,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 158,
+        "description": "Space 1 - 58",
+        "capacity": 2,
+        "neighbors": [
+            309,
+            310
+        ],
+        "coordinates": [
+            54.75,
+            31.77142857,
+            0.0
+        ],
+        "area": 17.1099999999999,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 159,
+        "description": "Space 1 - 59",
+        "capacity": 2,
+        "neighbors": [
+            309,
+            310
+        ],
+        "coordinates": [
+            57.65,
+            31.77142857,
+            0.0
+        ],
+        "area": 17.110000000000127,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 160,
+        "description": "Space 1 - 60",
+        "capacity": 2,
+        "neighbors": [
+            310
+        ],
+        "coordinates": [
+            60.55,
+            31.77142857,
+            0.0
+        ],
+        "area": 17.109999999999673,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 161,
+        "description": "Space 1 - 61",
+        "capacity": 5,
+        "neighbors": [
+            310,
+            311
+        ],
+        "coordinates": [
+            64.86875,
+            31.9,
+            0.0
+        ],
+        "area": 33.63000000000011,
+        "room_type": "Large Office"
+    },
+    {
+        "id": 162,
+        "description": "Space 1 - 62",
+        "capacity": 5,
+        "neighbors": [
+            311,
+            313
+        ],
+        "coordinates": [
+            70.6,
+            31.77142857,
+            0.0
+        ],
+        "area": 34.220000000000255,
+        "room_type": "Large Office"
+    },
+    {
+        "id": 163,
+        "description": "Space 1 - 63",
+        "capacity": 92,
+        "neighbors": [
+            313
+        ],
+        "coordinates": [
+            82.51428571,
+            36.15238095,
+            0.0
+        ],
+        "area": 183.36000000000013,
+        "room_type": "Meeting Room"
+    },
+    {
+        "id": 164,
+        "description": "Space 1 - 64",
+        "capacity": 1,
+        "neighbors": [
+            318
+        ],
+        "coordinates": [
+            43.05,
+            28.2,
+            0.0
+        ],
+        "area": 4.639999999999873,
+        "room_type": "Small Office"
+    },
+    {
+        "id": 165,
+        "description": "Space 1 - 65",
+        "capacity": 1,
+        "neighbors": [
+            318
+        ],
+        "coordinates": [
+            43.05,
+            26.35,
+            0.0
+        ],
+        "area": 6.089999999999918,
+        "room_type": "Small Office"
+    },
+    {
+        "id": 166,
+        "description": "Space 1 - 66",
+        "capacity": 2,
+        "neighbors": [
+            319
+        ],
+        "coordinates": [
+            42.4195122,
+            21.58292683,
+            0.0
+        ],
+        "area": 17.580000000000155,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 167,
+        "description": "Space 1 - 67",
+        "capacity": 2,
+        "neighbors": [
+            317,
+            319,
+            322
+        ],
+        "coordinates": [
+            42.96216216,
+            17.62432432,
+            0.0
+        ],
+        "area": 12.0,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 168,
+        "description": "Space 1 - 68",
+        "capacity": 7,
+        "neighbors": [
+            319,
+            322
+        ],
+        "coordinates": [
+            54.02,
+            18.98,
+            0.0
+        ],
+        "area": 50.05000000000007,
+        "room_type": "Large Office"
+    },
+    {
+        "id": 169,
+        "description": "Space 1 - 69",
+        "capacity": 6,
+        "neighbors": [
+            323
+        ],
+        "coordinates": [
+            60.75,
+            18.36666667,
+            0.0
+        ],
+        "area": 47.450000000000045,
+        "room_type": "Large Office"
+    },
+    {
+        "id": 170,
+        "description": "Space 1 - 70",
+        "capacity": 8,
+        "neighbors": [
+            323,
+            324
+        ],
+        "coordinates": [
+            69.38,
+            17.82,
+            0.0
+        ],
+        "area": 57.330000000000155,
+        "room_type": "Large Office"
+    },
+    {
+        "id": 171,
+        "description": "Space 1 - 71",
+        "capacity": 5,
+        "neighbors": [
+            322,
+            323
+        ],
+        "coordinates": [
+            52.43333333,
+            10.76666667,
+            0.0
+        ],
+        "area": 36.19,
+        "room_type": "Large Office"
+    },
+    {
+        "id": 172,
+        "description": "Space 1 - 72",
+        "capacity": 7,
+        "neighbors": [
+            323
+        ],
+        "coordinates": [
+            58.25,
+            9.65,
+            0.0
+        ],
+        "area": 48.98999999999995,
+        "room_type": "Large Office"
+    },
+    {
+        "id": 173,
+        "description": "Space 1 - 73",
+        "capacity": 33,
+        "neighbors": [
+            323,
+            324
+        ],
+        "coordinates": [
+            66.45,
+            9.65,
+            0.0
+        ],
+        "area": 64.1699999999999,
+        "room_type": "Meeting Room"
+    },
+    {
+        "id": 174,
+        "description": "Space 1 - 74",
+        "capacity": 3,
+        "neighbors": [
+            324
+        ],
+        "coordinates": [
+            78.2,
+            18.45,
+            0.0
+        ],
+        "area": 21.419999999999845,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 175,
+        "description": "Space 1 - 75",
+        "capacity": 5,
+        "neighbors": [
+            324
+        ],
+        "coordinates": [
+            82.5,
+            18.45,
+            0.0
+        ],
+        "area": 32.76000000000022,
+        "room_type": "Large Office"
+    },
+    {
+        "id": 176,
+        "description": "Space 1 - 76",
+        "capacity": 69,
+        "neighbors": [
+            324
+        ],
+        "coordinates": [
+            87.64285714,
+            13.08571429,
+            0.0
+        ],
+        "area": 137.0599999999999,
+        "room_type": "Meeting Room"
+    },
+    {
+        "id": 177,
+        "description": "Space 1 - 77",
+        "capacity": 31,
+        "neighbors": [
+            324
+        ],
+        "coordinates": [
+            80.7,
+            8.966666667,
+            0.0
+        ],
+        "area": 60.71999999999994,
+        "room_type": "Meeting Room"
+    },
+    {
+        "id": 178,
+        "description": "Space 1 - 78",
+        "capacity": 6,
+        "neighbors": [
+            321,
+            322,
+            325
+        ],
+        "coordinates": [
+            42.43220339,
+            6.681355932,
+            0.0
+        ],
+        "area": 47.859999999999964,
+        "room_type": "Large Office"
+    },
+    {
+        "id": 201,
+        "description": "Space 2 - 1",
+        "capacity": 2,
+        "neighbors": [
+            401,
+            402
+        ],
+        "coordinates": [
+            1.25,
+            38.55,
+            2.4384
+        ],
+        "area": 12.470000000000013,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 202,
+        "description": "Space 2 - 2",
+        "capacity": 2,
+        "neighbors": [
+            402
+        ],
+        "coordinates": [
+            4.114285714,
+            38.55,
+            2.4384
+        ],
+        "area": 12.469999999999999,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 203,
+        "description": "Space 2 - 3",
+        "capacity": 2,
+        "neighbors": [
+            402,
+            403
+        ],
+        "coordinates": [
+            6.8,
+            38.55,
+            2.4384
+        ],
+        "area": 10.320000000000022,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 204,
+        "description": "Space 2 - 4",
+        "capacity": 2,
+        "neighbors": [
+            403
+        ],
+        "coordinates": [
+            9.45,
+            38.55,
+            2.4384
+        ],
+        "area": 12.470000000000027,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 205,
+        "description": "Space 2 - 5",
+        "capacity": 2,
+        "neighbors": [
+            403
+        ],
+        "coordinates": [
+            12.35,
+            38.55,
+            2.4384
+        ],
+        "area": 12.470000000000027,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 206,
+        "description": "Space 2 - 6",
+        "capacity": 2,
+        "neighbors": [
+            403,
+            404
+        ],
+        "coordinates": [
+            15.25,
+            38.55,
+            2.4384
+        ],
+        "area": 12.46999999999997,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 207,
+        "description": "Space 2 - 7",
+        "capacity": 2,
+        "neighbors": [
+            404
+        ],
+        "coordinates": [
+            18.15,
+            38.55,
+            2.4384
+        ],
+        "area": 12.470000000000027,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 208,
+        "description": "Space 2 - 8",
+        "capacity": 2,
+        "neighbors": [
+            404,
+            405
+        ],
+        "coordinates": [
+            21.05,
+            38.55,
+            2.4384
+        ],
+        "area": 12.470000000000027,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 209,
+        "description": "Space 2 - 9",
+        "capacity": 2,
+        "neighbors": [
+            405
+        ],
+        "coordinates": [
+            23.95,
+            38.55,
+            2.4384
+        ],
+        "area": 12.469999999999914,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 210,
+        "description": "Space 2 - 10",
+        "capacity": 2,
+        "neighbors": [
+            405
+        ],
+        "coordinates": [
+            26.85,
+            38.55,
+            2.4384
+        ],
+        "area": 12.470000000000255,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 211,
+        "description": "Space 2 - 11",
+        "capacity": 2,
+        "neighbors": [
+            405,
+            406
+        ],
+        "coordinates": [
+            29.75,
+            38.55,
+            2.4384
+        ],
+        "area": 12.470000000000027,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 212,
+        "description": "Space 2 - 12",
+        "capacity": 2,
+        "neighbors": [
+            406
+        ],
+        "coordinates": [
+            33.45714286,
+            38.55,
+            2.4384
+        ],
+        "area": 18.48999999999978,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 213,
+        "description": "Space 2 - 13",
+        "capacity": 2,
+        "neighbors": [
+            406,
+            407
+        ],
+        "coordinates": [
+            37.42,
+            38.8,
+            2.4384
+        ],
+        "area": 13.759999999999991,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 214,
+        "description": "Space 2 - 14",
+        "capacity": 106,
+        "neighbors": [
+            407,
+            408
+        ],
+        "coordinates": [
+            50.24247788,
+            35.97168142,
+            2.4384
+        ],
+        "area": 210.23000000000002,
+        "room_type": "Meeting Room"
+    },
+    {
+        "id": 215,
+        "description": "Space 2 - 15",
+        "capacity": 50,
+        "neighbors": [
+            408,
+            410
+        ],
+        "coordinates": [
+            72.63139535,
+            36.54534884,
+            2.4384
+        ],
+        "area": 98.90999999999985,
+        "room_type": "Meeting Room"
+    },
+    {
+        "id": 216,
+        "description": "Space 2 - 16",
+        "capacity": 3,
+        "neighbors": [
+            407,
+            408
+        ],
+        "coordinates": [
+            46.01090909,
+            33.18363636,
+            2.4384
+        ],
+        "area": 24.839999999999918,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 217,
+        "description": "Space 2 - 17",
+        "capacity": 92,
+        "neighbors": [
+            408,
+            410
+        ],
+        "coordinates": [
+            81.8,
+            36.375,
+            2.4384
+        ],
+        "area": 183.32999999999993,
+        "room_type": "Meeting Room"
+    },
+    {
+        "id": 218,
+        "description": "Space 2 - 18",
+        "capacity": 2,
+        "neighbors": [
+            401,
+            402
+        ],
+        "coordinates": [
+            1.25,
+            31.95,
+            2.4384
+        ],
+        "area": 17.11,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 219,
+        "description": "Space 2 - 19",
+        "capacity": 2,
+        "neighbors": [
+            402
+        ],
+        "coordinates": [
+            4.1,
+            31.95,
+            2.4384
+        ],
+        "area": 16.519999999999996,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 220,
+        "description": "Space 2 - 20",
+        "capacity": 2,
+        "neighbors": [
+            403
+        ],
+        "coordinates": [
+            7.15,
+            32.32857143,
+            2.4384
+        ],
+        "area": 19.47,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 221,
+        "description": "Space 2 - 21",
+        "capacity": 2,
+        "neighbors": [
+            403,
+            404
+        ],
+        "coordinates": [
+            12.4,
+            31.95,
+            2.4384
+        ],
+        "area": 17.69999999999999,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 222,
+        "description": "Space 2 - 22",
+        "capacity": 2,
+        "neighbors": [
+            404
+        ],
+        "coordinates": [
+            15.35,
+            31.95,
+            2.4384
+        ],
+        "area": 17.110000000000014,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 223,
+        "description": "Space 2 - 23",
+        "capacity": 2,
+        "neighbors": [
+            404
+        ],
+        "coordinates": [
+            18.2,
+            31.95,
+            2.4384
+        ],
+        "area": 16.519999999999982,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 224,
+        "description": "Space 2 - 24",
+        "capacity": 2,
+        "neighbors": [
+            404,
+            405
+        ],
+        "coordinates": [
+            21.1,
+            31.95,
+            2.4384
+        ],
+        "area": 17.699999999999932,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 225,
+        "description": "Space 2 - 25",
+        "capacity": 2,
+        "neighbors": [
+            405
+        ],
+        "coordinates": [
+            24.0,
+            31.95,
+            2.4384
+        ],
+        "area": 16.520000000000095,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 226,
+        "description": "Space 2 - 26",
+        "capacity": 2,
+        "neighbors": [
+            405,
+            406
+        ],
+        "coordinates": [
+            26.9,
+            31.95,
+            2.4384
+        ],
+        "area": 17.699999999999932,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 227,
+        "description": "Space 2 - 27",
+        "capacity": 2,
+        "neighbors": [
+            406
+        ],
+        "coordinates": [
+            29.8,
+            31.95,
+            2.4384
+        ],
+        "area": 16.519999999999982,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 228,
+        "description": "Space 2 - 28",
+        "capacity": 6,
+        "neighbors": [
+            406,
+            407
+        ],
+        "coordinates": [
+            34.55625,
+            32.13125,
+            2.4384
+        ],
+        "area": 44.25,
+        "room_type": "Large Office"
+    },
+    {
+        "id": 229,
+        "description": "Space 2 - 29",
+        "capacity": 2,
+        "neighbors": [
+            411
+        ],
+        "coordinates": [
+            1.25,
+            23.3,
+            2.4384
+        ],
+        "area": 12.760000000000002,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 230,
+        "description": "Space 2 - 30",
+        "capacity": 2,
+        "neighbors": [
+            411
+        ],
+        "coordinates": [
+            4.142857143,
+            23.3,
+            2.4384
+        ],
+        "area": 12.759999999999984,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 231,
+        "description": "Space 2 - 31",
+        "capacity": 2,
+        "neighbors": [
+            411,
+            412
+        ],
+        "coordinates": [
+            7.314285714,
+            23.3,
+            2.4384
+        ],
+        "area": 14.079999999999984,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 232,
+        "description": "Space 2 - 32",
+        "capacity": 2,
+        "neighbors": [
+            412
+        ],
+        "coordinates": [
+            14.61428571,
+            23.3,
+            2.4384
+        ],
+        "area": 11.0,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 233,
+        "description": "Space 2 - 33",
+        "capacity": 2,
+        "neighbors": [
+            412,
+            413
+        ],
+        "coordinates": [
+            17.64285714,
+            23.3,
+            2.4384
+        ],
+        "area": 15.839999999999975,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 234,
+        "description": "Space 2 - 34",
+        "capacity": 2,
+        "neighbors": [
+            411
+        ],
+        "coordinates": [
+            1.2,
+            17.35,
+            2.4384
+        ],
+        "area": 12.040000000000006,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 235,
+        "description": "Space 2 - 35",
+        "capacity": 2,
+        "neighbors": [
+            411
+        ],
+        "coordinates": [
+            4.1,
+            17.35,
+            2.4384
+        ],
+        "area": 12.899999999999991,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 236,
+        "description": "Space 2 - 36",
+        "capacity": 2,
+        "neighbors": [
+            411,
+            412
+        ],
+        "coordinates": [
+            7.1,
+            17.34285714,
+            2.4384
+        ],
+        "area": 12.899999999999991,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 237,
+        "description": "Space 2 - 37",
+        "capacity": 2,
+        "neighbors": [
+            414
+        ],
+        "coordinates": [
+            1.45,
+            8.65,
+            2.4384
+        ],
+        "area": 16.53,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 238,
+        "description": "Space 2 - 38",
+        "capacity": 2,
+        "neighbors": [
+            414
+        ],
+        "coordinates": [
+            4.35,
+            8.65,
+            2.4384
+        ],
+        "area": 16.53,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 239,
+        "description": "Space 2 - 39",
+        "capacity": 2,
+        "neighbors": [
+            414,
+            415
+        ],
+        "coordinates": [
+            7.2,
+            8.65,
+            2.4384
+        ],
+        "area": 15.959999999999994,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 240,
+        "description": "Space 2 - 40",
+        "capacity": 2,
+        "neighbors": [
+            415
+        ],
+        "coordinates": [
+            12.0,
+            8.95,
+            2.4384
+        ],
+        "area": 15.899999999999991,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 241,
+        "description": "Space 2 - 41",
+        "capacity": 2,
+        "neighbors": [
+            415,
+            416
+        ],
+        "coordinates": [
+            15.14285714,
+            8.95,
+            2.4384
+        ],
+        "area": 15.36999999999999,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 242,
+        "description": "Space 2 - 42",
+        "capacity": 2,
+        "neighbors": [
+            416
+        ],
+        "coordinates": [
+            18.04285714,
+            8.95,
+            2.4384
+        ],
+        "area": 15.370000000000005,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 243,
+        "description": "Space 2 - 43",
+        "capacity": 2,
+        "neighbors": [
+            416,
+            417
+        ],
+        "coordinates": [
+            20.54285714,
+            8.528571429,
+            2.4384
+        ],
+        "area": 15.66000000000001,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 244,
+        "description": "Space 2 - 44",
+        "capacity": 2,
+        "neighbors": [
+            417
+        ],
+        "coordinates": [
+            23.6,
+            8.9,
+            2.4384
+        ],
+        "area": 15.120000000000005,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 245,
+        "description": "Space 2 - 45",
+        "capacity": 2,
+        "neighbors": [
+            414
+        ],
+        "coordinates": [
+            1.45,
+            2.1,
+            2.4384
+        ],
+        "area": 12.18,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 246,
+        "description": "Space 2 - 46",
+        "capacity": 2,
+        "neighbors": [
+            414
+        ],
+        "coordinates": [
+            4.35,
+            2.1,
+            2.4384
+        ],
+        "area": 12.18,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 247,
+        "description": "Space 2 - 47",
+        "capacity": 2,
+        "neighbors": [
+            414
+        ],
+        "coordinates": [
+            7.0,
+            2.1,
+            2.4384
+        ],
+        "area": 10.079999999999998,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 248,
+        "description": "Space 2 - 48",
+        "capacity": 1,
+        "neighbors": [
+            414,
+            415
+        ],
+        "coordinates": [
+            9.35,
+            2.1,
+            2.4384
+        ],
+        "area": 9.660000000000004,
+        "room_type": "Small Office"
+    },
+    {
+        "id": 249,
+        "description": "Space 2 - 49",
+        "capacity": 2,
+        "neighbors": [
+            415,
+            416
+        ],
+        "coordinates": [
+            12.0,
+            2.385714286,
+            2.4384
+        ],
+        "area": 12.600000000000001,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 250,
+        "description": "Space 2 - 50",
+        "capacity": 3,
+        "neighbors": [
+            416
+        ],
+        "coordinates": [
+            16.4,
+            2.385714286,
+            2.4384
+        ],
+        "area": 24.36,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 251,
+        "description": "Space 2 - 51",
+        "capacity": 3,
+        "neighbors": [
+            417
+        ],
+        "coordinates": [
+            22.15,
+            2.385714286,
+            2.4384
+        ],
+        "area": 23.939999999999998,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 252,
+        "description": "Space 2 - 52",
+        "capacity": 2,
+        "neighbors": [
+            419,
+            421
+        ],
+        "coordinates": [
+            31.35,
+            8.45,
+            2.4384
+        ],
+        "area": 16.529999999999973,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 253,
+        "description": "Space 2 - 53",
+        "capacity": 2,
+        "neighbors": [
+            418,
+            419
+        ],
+        "coordinates": [
+            31.35,
+            11.35,
+            2.4384
+        ],
+        "area": 16.53000000000003,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 254,
+        "description": "Space 2 - 54",
+        "capacity": 3,
+        "neighbors": [
+            418
+        ],
+        "coordinates": [
+            31.35,
+            14.9,
+            2.4384
+        ],
+        "area": 23.940000000000055,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 255,
+        "description": "Space 2 - 55",
+        "capacity": 3,
+        "neighbors": [
+            418
+        ],
+        "coordinates": [
+            42.43888889,
+            15.11666667,
+            2.4384
+        ],
+        "area": 22.420000000000073,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 256,
+        "description": "Space 2 - 56",
+        "capacity": 2,
+        "neighbors": [
+            418,
+            419
+        ],
+        "coordinates": [
+            42.5,
+            11.0,
+            2.4384
+        ],
+        "area": 10.63999999999993,
+        "room_type": "Mid Office"
+    },
+    {
+        "id": 257,
+        "description": "Space 2 - 57",
+        "capacity": 1,
+        "neighbors": [
+            421
+        ],
+        "coordinates": [
+            42.8,
+            6.05,
+            2.4384
+        ],
+        "area": 8.639999999999958,
+        "room_type": "Small Office"
+    },
+    {
+        "id": 301,
+        "description": "Corridor 1 - 1",
+        "capacity": -1,
+        "neighbors": [
+            0,
+            120,
+            131,
+            302,
+            401
+        ],
+        "coordinates": [
+            1.0,
+            35.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 302,
+        "description": "Corridor 1 - 2",
+        "capacity": -1,
+        "neighbors": [
+            120,
+            121,
+            122,
+            131,
+            132,
+            133,
+            301,
+            303
+        ],
+        "coordinates": [
+            6.0,
+            35.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 303,
+        "description": "Corridor 1 - 3",
+        "capacity": -1,
+        "neighbors": [
+            122,
+            123,
+            133,
+            134,
+            302,
+            304,
+            315
+        ],
+        "coordinates": [
+            10.5,
+            35.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 304,
+        "description": "Corridor 1 - 4",
+        "capacity": -1,
+        "neighbors": [
+            123,
+            124,
+            125,
+            134,
+            135,
+            136,
+            303,
+            305
+        ],
+        "coordinates": [
+            16.5,
+            35.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 305,
+        "description": "Corridor 1 - 5",
+        "capacity": -1,
+        "neighbors": [
+            125,
+            126,
+            127,
+            136,
+            137,
+            138,
+            304,
+            306
+        ],
+        "coordinates": [
+            22.5,
+            35.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 306,
+        "description": "Corridor 1 - 6",
+        "capacity": -1,
+        "neighbors": [
+            0,
+            127,
+            128,
+            129,
+            130,
+            138,
+            139,
+            140,
+            141,
+            305,
+            307
+        ],
+        "coordinates": [
+            30.0,
+            35.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 307,
+        "description": "Corridor 1 - 7",
+        "capacity": -1,
+        "neighbors": [
+            0,
+            130,
+            140,
+            141,
+            146,
+            147,
+            306,
+            308,
+            312
+        ],
+        "coordinates": [
+            39.0,
+            35.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 308,
+        "description": "Corridor 1 - 8",
+        "capacity": -1,
+        "neighbors": [
+            147,
+            148,
+            149,
+            154,
+            155,
+            156,
+            157,
+            307,
+            309,
+            312,
+            318
+        ],
+        "coordinates": [
+            47.5,
+            35.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 309,
+        "description": "Corridor 1 - 9",
+        "capacity": -1,
+        "neighbors": [
+            150,
+            151,
+            157,
+            158,
+            159,
+            308,
+            310
+        ],
+        "coordinates": [
+            53.0,
+            35.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 310,
+        "description": "Corridor 1 - 10",
+        "capacity": -1,
+        "neighbors": [
+            151,
+            152,
+            158,
+            159,
+            160,
+            161,
+            309,
+            311
+        ],
+        "coordinates": [
+            55.0,
+            35.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 311,
+        "description": "Corridor 1 - 11",
+        "capacity": -1,
+        "neighbors": [
+            152,
+            153,
+            161,
+            162,
+            310,
+            313
+        ],
+        "coordinates": [
+            67.0,
+            35.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 312,
+        "description": "Corridor 1 - 12",
+        "capacity": -1,
+        "neighbors": [
+            0,
+            307,
+            308,
+            409
+        ],
+        "coordinates": [
+            40.0,
+            32.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 313,
+        "description": "Corridor 1 - 13",
+        "capacity": -1,
+        "neighbors": [
+            0,
+            153,
+            162,
+            163,
+            311,
+            324,
+            410
+        ],
+        "coordinates": [
+            70.0,
+            32.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 314,
+        "description": "Corridor 1 - 14",
+        "capacity": -1,
+        "neighbors": [
+            103,
+            104,
+            111,
+            112,
+            315
+        ],
+        "coordinates": [
+            3.5,
+            20.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 315,
+        "description": "Corridor 1 - 15",
+        "capacity": -1,
+        "neighbors": [
+            104,
+            105,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            303,
+            314,
+            316,
+            320
+        ],
+        "coordinates": [
+            9.0,
+            20.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 316,
+        "description": "Corridor 1 - 16",
+        "capacity": -1,
+        "neighbors": [
+            105,
+            106,
+            107,
+            108,
+            115,
+            117,
+            118,
+            315,
+            317
+        ],
+        "coordinates": [
+            16.5,
+            20.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 317,
+        "description": "Corridor 1 - 17",
+        "capacity": -1,
+        "neighbors": [
+            108,
+            109,
+            110,
+            118,
+            119,
+            167,
+            316,
+            319,
+            322
+        ],
+        "coordinates": [
+            25.0,
+            20.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 318,
+        "description": "Corridor 1 - 18",
+        "capacity": -1,
+        "neighbors": [
+            154,
+            155,
+            156,
+            164,
+            165,
+            308,
+            319
+        ],
+        "coordinates": [
+            47.5,
+            27.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 319,
+        "description": "Corridor 1 - 19",
+        "capacity": -1,
+        "neighbors": [
+            166,
+            167,
+            168,
+            317,
+            318,
+            322
+        ],
+        "coordinates": [
+            47.5,
+            19.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 320,
+        "description": "Corridor 1 - 20",
+        "capacity": -1,
+        "neighbors": [
+            101,
+            102,
+            114,
+            116,
+            142,
+            143,
+            144,
+            145,
+            315,
+            326
+        ],
+        "coordinates": [
+            9.0,
+            5.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 321,
+        "description": "Corridor 1 - 21",
+        "capacity": -1,
+        "neighbors": [
+            101,
+            102,
+            142,
+            143,
+            144,
+            145,
+            178,
+            322,
+            325
+        ],
+        "coordinates": [
+            32.0,
+            5.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 322,
+        "description": "Corridor 1 - 22",
+        "capacity": -1,
+        "neighbors": [
+            167,
+            168,
+            171,
+            178,
+            317,
+            319,
+            321,
+            323,
+            325
+        ],
+        "coordinates": [
+            53.0,
+            14.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 323,
+        "description": "Corridor 1 - 23",
+        "capacity": -1,
+        "neighbors": [
+            169,
+            170,
+            171,
+            172,
+            173,
+            322,
+            324
+        ],
+        "coordinates": [
+            57.0,
+            14.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 324,
+        "description": "Corridor 1 - 24",
+        "capacity": -1,
+        "neighbors": [
+            0,
+            170,
+            173,
+            174,
+            175,
+            176,
+            177,
+            313,
+            323
+        ],
+        "coordinates": [
+            74.0,
+            14.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 325,
+        "description": "Corridor 1 - 25",
+        "capacity": -1,
+        "neighbors": [
+            0,
+            178,
+            321,
+            322,
+            421
+        ],
+        "coordinates": [
+            53.0,
+            5.0,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 326,
+        "description": "Corridor 1 - 26",
+        "capacity": -1,
+        "neighbors": [
+            0,
+            102,
+            320
+        ],
+        "coordinates": [
+            9.0,
+            0.2,
+            0.0
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 401,
+        "description": "Corridor 2 - 1",
+        "capacity": -1,
+        "neighbors": [
+            201,
+            218,
+            301,
+            402
+        ],
+        "coordinates": [
+            1.0,
+            35.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 402,
+        "description": "Corridor 2 - 2",
+        "capacity": -1,
+        "neighbors": [
+            201,
+            202,
+            203,
+            218,
+            219,
+            401,
+            403
+        ],
+        "coordinates": [
+            4.2,
+            35.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 403,
+        "description": "Corridor 2 - 3",
+        "capacity": -1,
+        "neighbors": [
+            203,
+            204,
+            205,
+            206,
+            220,
+            221,
+            402,
+            404,
+            412
+        ],
+        "coordinates": [
+            10.0,
+            35.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 404,
+        "description": "Corridor 2 - 4",
+        "capacity": -1,
+        "neighbors": [
+            206,
+            207,
+            208,
+            221,
+            222,
+            223,
+            224,
+            403,
+            405
+        ],
+        "coordinates": [
+            18.0,
+            35.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 405,
+        "description": "Corridor 2 - 5",
+        "capacity": -1,
+        "neighbors": [
+            208,
+            209,
+            210,
+            211,
+            224,
+            225,
+            226,
+            404,
+            406
+        ],
+        "coordinates": [
+            24.0,
+            35.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 406,
+        "description": "Corridor 2 - 6",
+        "capacity": -1,
+        "neighbors": [
+            211,
+            212,
+            213,
+            226,
+            227,
+            228,
+            405,
+            407
+        ],
+        "coordinates": [
+            33.0,
+            35.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 407,
+        "description": "Corridor 2 - 7",
+        "capacity": -1,
+        "neighbors": [
+            213,
+            214,
+            216,
+            228,
+            406,
+            408,
+            409
+        ],
+        "coordinates": [
+            39.0,
+            35.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 408,
+        "description": "Corridor 2 - 8",
+        "capacity": -1,
+        "neighbors": [
+            214,
+            215,
+            216,
+            217,
+            407,
+            410
+        ],
+        "coordinates": [
+            60.0,
+            32.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 409,
+        "description": "Corridor 2 - 9",
+        "capacity": -1,
+        "neighbors": [
+            312,
+            407,
+            418
+        ],
+        "coordinates": [
+            40.0,
+            32.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 410,
+        "description": "Corridor 2 - 10",
+        "capacity": -1,
+        "neighbors": [
+            215,
+            217,
+            313,
+            408
+        ],
+        "coordinates": [
+            70.0,
+            32.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 411,
+        "description": "Corridor 2 - 11",
+        "capacity": -1,
+        "neighbors": [
+            229,
+            230,
+            231,
+            234,
+            235,
+            236,
+            412
+        ],
+        "coordinates": [
+            4.0,
+            20.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 412,
+        "description": "Corridor 2 - 12",
+        "capacity": -1,
+        "neighbors": [
+            231,
+            232,
+            233,
+            236,
+            403,
+            411,
+            413,
+            415
+        ],
+        "coordinates": [
+            9.0,
+            20.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 413,
+        "description": "Corridor 2 - 13",
+        "capacity": -1,
+        "neighbors": [
+            233,
+            412
+        ],
+        "coordinates": [
+            15.0,
+            20.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 414,
+        "description": "Corridor 2 - 14",
+        "capacity": -1,
+        "neighbors": [
+            237,
+            238,
+            239,
+            245,
+            246,
+            247,
+            248,
+            415,
+            420
+        ],
+        "coordinates": [
+            4.0,
+            5.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 415,
+        "description": "Corridor 2 - 15",
+        "capacity": -1,
+        "neighbors": [
+            239,
+            240,
+            241,
+            248,
+            249,
+            412,
+            414,
+            416
+        ],
+        "coordinates": [
+            9.0,
+            5.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 416,
+        "description": "Corridor 2 - 16",
+        "capacity": -1,
+        "neighbors": [
+            241,
+            242,
+            243,
+            249,
+            250,
+            415,
+            417
+        ],
+        "coordinates": [
+            17.5,
+            5.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 417,
+        "description": "Corridor 2 - 17",
+        "capacity": -1,
+        "neighbors": [
+            243,
+            244,
+            251,
+            416,
+            421
+        ],
+        "coordinates": [
+            23.0,
+            5.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 418,
+        "description": "Corridor 2 - 18",
+        "capacity": -1,
+        "neighbors": [
+            253,
+            254,
+            255,
+            256,
+            409,
+            419
+        ],
+        "coordinates": [
+            37.0,
+            12.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 419,
+        "description": "Corridor 2 - 19",
+        "capacity": -1,
+        "neighbors": [
+            252,
+            253,
+            256,
+            418,
+            421
+        ],
+        "coordinates": [
+            37.0,
+            10.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 420,
+        "description": "Corridor 2 - 20",
+        "capacity": -1,
+        "neighbors": [
+            414
+        ],
+        "coordinates": [
+            5.0,
+            5.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    },
+    {
+        "id": 421,
+        "description": "Corridor 2 - 21",
+        "capacity": -1,
+        "neighbors": [
+            252,
+            257,
+            325,
+            417,
+            419
+        ],
+        "coordinates": [
+            37.0,
+            5.0,
+            2.4384
+        ],
+        "area": 0,
+        "room_type": "Corridor"
+    }
+]

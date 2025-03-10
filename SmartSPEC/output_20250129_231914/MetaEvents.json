@@ -1,0 +1,167 @@
+[
+    {
+        "id": 1,
+        "description": "lower-div-lect-large",
+        "probability": 5.0,
+        "spaces": {
+            "space-ids": [
+                2061
+            ],
+            "number": 1
+        },
+        "capacity": [
+            {
+                "metaperson-id": 1,
+                "lo": [
+                    90.0,
+                    5.0
+                ],
+                "hi": [
+                    225.0,
+                    5.0
+                ]
+            }
+        ],
+        "time-profiles": [
+            {
+                "probability": 1.0,
+                "profile": [
+                    {
+                        "pattern": {
+                            "start-date": "2020-01-01",
+                            "end-date": "2020-12-01",
+                            "period": "day",
+                            "period-details": {
+                                "repeat-every": 1
+                            }
+                        },
+                        "duration": {
+                            "start-time": [
+                                "00:00:00",
+                                "00:02:00"
+                            ],
+                            "end-time": [
+                                "23:50:00",
+                                "00:02:00"
+                            ],
+                            "required": [
+                                "00:50:00",
+                                "00:02:00"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "description": "lower-div-lect-large",
+        "probability": 5.0,
+        "spaces": {
+            "space-ids": [
+                2061
+            ],
+            "number": 1
+        },
+        "capacity": [
+            {
+                "metaperson-id": 2,
+                "lo": [
+                    90.0,
+                    5.0
+                ],
+                "hi": [
+                    225.0,
+                    5.0
+                ]
+            }
+        ],
+        "time-profiles": [
+            {
+                "probability": 1.0,
+                "profile": [
+                    {
+                        "pattern": {
+                            "start-date": "2020-01-01",
+                            "end-date": "2020-12-01",
+                            "period": "day",
+                            "period-details": {
+                                "repeat-every": 1
+                            }
+                        },
+                        "duration": {
+                            "start-time": [
+                                "00:00:00",
+                                "00:02:00"
+                            ],
+                            "end-time": [
+                                "23:50:00",
+                                "00:02:00"
+                            ],
+                            "required": [
+                                "00:50:00",
+                                "00:02:00"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "description": "lower-div-lect-large",
+        "probability": 5.0,
+        "spaces": {
+            "space-ids": [
+                2061
+            ],
+            "number": 1
+        },
+        "capacity": [
+            {
+                "metaperson-id": 3,
+                "lo": [
+                    90.0,
+                    5.0
+                ],
+                "hi": [
+                    225.0,
+                    5.0
+                ]
+            }
+        ],
+        "time-profiles": [
+            {
+                "probability": 1.0,
+                "profile": [
+                    {
+                        "pattern": {
+                            "start-date": "2020-01-01",
+                            "end-date": "2020-12-01",
+                            "period": "day",
+                            "period-details": {
+                                "repeat-every": 1
+                            }
+                        },
+                        "duration": {
+                            "start-time": [
+                                "00:00:00",
+                                "00:02:00"
+                            ],
+                            "end-time": [
+                                "23:50:00",
+                                "00:02:00"
+                            ],
+                            "required": [
+                                "00:50:00",
+                                "00:02:00"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

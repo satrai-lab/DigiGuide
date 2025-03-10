@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "description": "upper-div-ugrad",
+        "probability": 2000.0,
+        "event-affinity": [
+            {
+                "metaevent-id": 1,
+                "probability": 10.0
+            }
+        ],
+        "time-profiles": [
+            {
+                "probability": 1.0,
+                "profile": [
+                    {
+                        "pattern": {
+                            "start-date": "2020-01-01",
+                            "end-date": "2020-12-01",
+                            "period": "day",
+                            "period-details": {
+                                "repeat-every": 1
+                            }
+                        },
+                        "duration": {
+                            "start-time": [
+                                "00:00:00",
+                                "00:00:00"
+                            ],
+                            "end-time": [
+                                "23:00:00",
+                                "00:10:00"
+                            ],
+                            "required": [
+                                "20:00:00",
+                                "00:10:00"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "description": "upper-div-ugrad",
+        "probability": 2000.0,
+        "event-affinity": [
+            {
+                "metaevent-id": 1,
+                "probability": 10.0
+            }
+        ],
+        "time-profiles": [
+            {
+                "probability": 1.0,
+                "profile": [
+                    {
+                        "pattern": {
+                            "start-date": "2020-01-01",
+                            "end-date": "2020-12-01",
+                            "period": "day",
+                            "period-details": {
+                                "repeat-every": 1
+                            }
+                        },
+                        "duration": {
+                            "start-time": [
+                                "00:00:00",
+                                "00:00:00"
+                            ],
+                            "end-time": [
+                                "23:00:00",
+                                "00:10:00"
+                            ],
+                            "required": [
+                                "20:00:00",
+                                "00:10:00"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "description": "upper-div-ugrad",
+        "probability": 2000.0,
+        "event-affinity": [
+            {
+                "metaevent-id": 1,
+                "probability": 10.0
+            }
+        ],
+        "time-profiles": [
+            {
+                "probability": 1.0,
+                "profile": [
+                    {
+                        "pattern": {
+                            "start-date": "2020-01-01",
+                            "end-date": "2020-12-01",
+                            "period": "day",
+                            "period-details": {
+                                "repeat-every": 1
+                            }
+                        },
+                        "duration": {
+                            "start-time": [
+                                "00:00:00",
+                                "00:00:00"
+                            ],
+                            "end-time": [
+                                "23:00:00",
+                                "00:10:00"
+                            ],
+                            "required": [
+                                "20:00:00",
+                                "00:10:00"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

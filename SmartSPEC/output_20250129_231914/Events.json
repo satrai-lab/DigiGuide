@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "metaevent-id": 1,
+        "description": "research-project-meeting",
+        "profile-index": 0,
+        "space-ids": [
+            2061
+        ],
+        "capacity": [
+            {
+                "metaperson-id": -1,
+                "range": [
+                    20,
+                    12
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "metaevent-id": 2,
+        "description": "research-project-meeting",
+        "profile-index": 0,
+        "space-ids": [
+            2061
+        ],
+        "capacity": [
+            {
+                "metaperson-id": -1,
+                "range": [
+                    20,
+                    12
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "metaevent-id": 3,
+        "description": "research-project-meeting",
+        "profile-index": 0,
+        "space-ids": [
+            2061
+        ],
+        "capacity": [
+            {
+                "metaperson-id": -1,
+                "range": [
+                    20,
+                    12
+                ]
+            }
+        ]
+    }
+]
