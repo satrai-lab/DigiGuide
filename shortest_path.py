@@ -5,13 +5,13 @@ from math import sqrt
 
 class Graph:
     def __init__(self, json_file):
-        """从 JSON 文件初始化图结构"""
-        self.graph = {}  # 邻接表
-        self.coordinates = {}  # 坐标信息
+        """Initialize graph structure from JSON file"""
+        self.graph = {}  # Adjacency list
+        self.coordinates = {}  # Coordinate information
         self._load_data(json_file)
 
     def _load_data(self, json_file):
-        """从 JSON 文件加载数据"""
+        """Load data from JSON file"""
         with open(json_file, "r", encoding="utf-8") as file:
             data = json.load(file)
 
@@ -21,26 +21,26 @@ class Graph:
             self.coordinates[node_id] = tuple(node["coordinates"]) if node["coordinates"] else None
 
     def euclidean_distance(self, coord1, coord2):
-        """计算两个三维坐标之间的欧几里得距离"""
+        """Calculate Euclidean distance between two 3D coordinates"""
         return sqrt(sum((a - b) ** 2 for a, b in zip(coord1, coord2)))
 
     def shortest_path(self, start_id, end_id):
-        """使用 Dijkstra 算法计算最短路径，并返回路径和距离"""
+        """Calculate shortest path using Dijkstra's algorithm and return path and distance"""
         if start_id not in self.graph or end_id not in self.graph:
-            return float('inf')  # 无法到达
+            return float('inf')  # Cannot reach
 
-        # 优先队列（最小堆），存储 (当前距离, 节点ID)
+        # Priority queue (min-heap), store (current distance, node ID)
         pq = [(0, start_id)]
         distances = {node_id: float('inf') for node_id in self.graph}
         distances[start_id] = 0
 
-        # 记录路径来源，用于回溯
+        # Record path source for backtracking
         predecessors = {start_id: None}
 
         while pq:
             current_dist, current_node = heapq.heappop(pq)
 
-            # 目标点找到，返回最短距离和路径
+            # Target point found, return shortest distance and path
             if current_node == end_id:
                 # path = self._reconstruct_path(predecessors, start_id, end_id)
                 # return current_dist, path
@@ -50,15 +50,15 @@ class Graph:
                 if self.coordinates[current_node] and self.coordinates[neighbor]:
                     dist = self.euclidean_distance(self.coordinates[current_node], self.coordinates[neighbor])
                 else:
-                    continue  # 跳过无坐标的点
+                    continue  # Skip points without coordinates
 
                 new_distance = current_dist + dist
                 if new_distance < distances[neighbor]:
                     distances[neighbor] = new_distance
-                    predecessors[neighbor] = current_node  # 记录前驱节点
+                    predecessors[neighbor] = current_node  # Record predecessor node
                     heapq.heappush(pq, (new_distance, neighbor))
 
-        return float('inf')  # 如果无法到达，返回无穷大
+        return float('inf')  # If cannot reach, return infinity
 
     # def _reconstruct_path(self, predecessors, start_id, end_id):
     #     """回溯路径"""
@@ -67,7 +67,7 @@ class Graph:
     #     while current is not None:
     #         path.append(current)
     #         current = predecessors.get(current)
-    #     return path[::-1]  # 逆序返回正确路径
+    #     return path[::-1]  # Reverse to return correct path
 
 
 

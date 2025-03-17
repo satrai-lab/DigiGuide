@@ -80,12 +80,12 @@ def calculate_scores(people, spaces, objectives):
         min_score = min(scores[key])
         max_score = max(scores[key])
         range_score = max_score - min_score
-        # 检查分母是否为零
+        # Check if denominator is zero
         if range_score == 0:
-            # 如果所有分数相等，可以将归一化分数设置为0.5或其他固定值
-            normalized_scores[key] = [0.5 for _ in scores[key]]  # 这里使用0.5作为所有相同分数的归一化值
+            # If all scores are equal, set normalized score to 0.5 or other fixed value
+            normalized_scores[key] = [0.5 for _ in scores[key]]  # Using 0.5 as normalized value for all identical scores
         else:
-            # 正常计算归一化分数
+            # Normal calculation of normalized scores
             normalized_scores[key] = [(score - min_score) / range_score for score in scores[key]]
 
     return normalized_scores

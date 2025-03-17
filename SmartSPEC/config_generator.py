@@ -5,17 +5,17 @@ from collections import defaultdict
 
 
 def generate_smartspec_model(people, start_points, end_points):
-    # 创建带有时间戳的文件夹
+    # Create a directory with a timestamp
     timestamp = time.strftime("%Y%m%d_%H%M%S")
     output_dir = f"output_{timestamp}"
     os.makedirs(output_dir, exist_ok=True)
 
     people_data = []
-    # 示例输入数据: p_id 从 s_i 到 s_j
+    # Example input data: p_id from s_i to s_j
     for i in range(len(people)):
         people_data.append((people[i], start_points[i], end_points[i]))
 
-    # 生成 MetaPeople.json 数据
+    # Generate MetaPeople.json data
     meta_people = []
     for p_id, s_i, s_j in people_data:
         meta_people.append({
@@ -50,7 +50,7 @@ def generate_smartspec_model(people, start_points, end_points):
     with open(os.path.join(output_dir, "MetaPeople.json"), "w") as f:
         json.dump(meta_people, f, indent=4)
 
-    # 生成 People.json 数据
+    # Generate People.json data
     people = []
     for p_id, s_i, s_j in people_data:
         people.append({
@@ -64,7 +64,7 @@ def generate_smartspec_model(people, start_points, end_points):
     with open(os.path.join(output_dir, "People.json"), "w") as f:
         json.dump(people, f, indent=4)
 
-    # 生成 MetaEvents.json 数据
+    # Generate MetaEvents.json data
     meta_events = []
     space_groups = defaultdict(list)
 
@@ -109,7 +109,7 @@ def generate_smartspec_model(people, start_points, end_points):
     with open(os.path.join(output_dir, "MetaEvents.json"), "w") as f:
         json.dump(meta_events, f, indent=4)
 
-    # 生成 Events.json 数据
+    # Generate Events.json data
     events = []
     for idx, (p_id, s_i, s_j) in enumerate(people_data, start=1):
         events.append({
@@ -124,4 +124,4 @@ def generate_smartspec_model(people, start_points, end_points):
     with open(os.path.join(output_dir, "Events.json"), "w") as f:
         json.dump(events, f, indent=4)
 
-    print(f"JSON 文件已生成在文件夹: {output_dir}")
+    print(f"JSON files have been generated in the directory: {output_dir}")

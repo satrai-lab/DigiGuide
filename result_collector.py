@@ -150,20 +150,20 @@ class Result:
     #     return np.digitize(ratio, [0.25, 0.5, 0.75]) + 1
     #
     # def _calculate_noise_level(self, room_id, occupant_count, space):
-    #     """基于声学公式的噪音等级计算"""
-    #     # 将基础噪音转换为声强
+    #     """Calculate noise level based on acoustic formula"""
+    #     # Convert base noise to intensity
     #     total_intensity = 10 ** (space.initial_noise / 10)
     #
-    #     # 叠加每个人的噪音贡献
+    #     # Add each person's noise contribution
     #     for person in range(occupant_count):
-    #         # 每个人的噪音贡献需保证非负
+    #         # Ensure each person's noise contribution is non-negative
     #         individual_noise = max(np.random.normal(40, 10), 0)
     #         total_intensity += 10 ** (individual_noise / 10)
     #
-    #     # 转换回分贝（避免除以零）
+    #     # Convert back to decibels (avoid division by zero)
     #     total_db = 10 * np.log10(total_intensity) if total_intensity > 0 else -np.inf
     #
-    #     # 分级标准（可自定义）
+    #     # Grading standard (customizable)
     #     return np.digitize(total_db, [30, 50, 70]) + 1
 
     def update_distance(self, previous_location: dict, next_location: dict):

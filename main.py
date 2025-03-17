@@ -187,7 +187,7 @@ def main(args):
 
 
 def cal_ep_zone_area(idf):
-    # 几何计算工具：通过顶点坐标计算多边形面积
+    # Geometric calculation tool: Calculate polygon area using vertex coordinates
     def calculate_polygon_area(vertices):
         n = len(vertices)
         area = 0
@@ -197,20 +197,20 @@ def cal_ep_zone_area(idf):
             area += x1 * y2 - y1 * x2
         return abs(area) / 2
 
-    # 获取所有 ZONEHVAC:EQUIPMENTCONNECTIONS 对象
+    # Get all ZONEHVAC:EQUIPMENTCONNECTIONS objects
     equipment_connections = idf.idfobjects['ZONEHVAC:EQUIPMENTCONNECTIONS']
 
-    # 初始化存储区域面积的字典
+    # Initialize dictionary to store zone areas
     zone_areas = {}
 
-    # 遍历每个 BuildingSurface:Detailed 对象
+    # Iterate over each BuildingSurface:Detailed object
     surfaces = idf.idfobjects['BUILDINGSURFACE:DETAILED']
     for surface in surfaces:
         zone_name = surface.Zone_Name
         vertices = []
 
-        # 动态检测顶点坐标的数量（跳过空值）
-        for i in range(1, 100):  # 假设最多有 100 个顶点
+        # Dynamically detect the number of vertex coordinates (skip null values)
+        for i in range(1, 100):  # Assume a maximum of 100 vertices
             x_attr = f"Vertex_{i}_Xcoordinate"
             y_attr = f"Vertex_{i}_Ycoordinate"
             if hasattr(surface, x_attr) and hasattr(surface, y_attr):
@@ -223,21 +223,21 @@ def cal_ep_zone_area(idf):
             else:
                 break
 
-        # 如果顶点数不足以构成多边形，跳过此表面
+        # If the number of vertices is insufficient to form a polygon, skip this surface
         if len(vertices) < 3:
             # print(f"Warning: Surface {surface.Name} has insufficient vertices. Skipping...")
             continue
 
-        # 计算当前表面的面积
+        # Calculate the area of the current surface
         area = calculate_polygon_area(vertices)
 
-        # 累加到对应的 ZONE
+        # Accumulate to the corresponding ZONE
         if zone_name in zone_areas:
             zone_areas[zone_name] += area
         else:
             zone_areas[zone_name] = area
     area = {}
-    # 输出每个 ZONE 的总面积
+    # Output the total area of each ZONE
     for connection in equipment_connections:
         zone_name = connection.Zone_Name
 
@@ -288,12 +288,20 @@ def extract_description_mapping(json_file):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Co-zyBench + H2H")
+    # Initialize argument parser for command line interface
+    parser = argparse.ArgumentParser(description="DigiGuide - Occupant Guiding System")
+    
+    # Add flag for enabling/disabling DigiGuide interaction mode
     parser.add_argument("-f", "--h2h", type=lambda x: x.lower() == 'true',
                         help="Running H2H True or False", default=True)
+    
+    # Add optional comment that will be appended to output filename
     parser.add_argument("-c", "--comment", type=str,
                         help="A comment followed by the output file name", default="")
+    
+    # Specify which environmental control optimizor to use
     parser.add_argument("-a", "--algorithm", type=str,
-                        help="TCPS Algorithm that will be accessed (majority, fair, drift)", default="majority")
+                        help="Environmental control optimizor that will be accessed (majority, drift)", default="majority")
 
+    # Parse arguments and run main program
     main(parser.parse_args())

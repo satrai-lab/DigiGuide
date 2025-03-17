@@ -199,10 +199,10 @@ def choose_best_solution_from_nsgaii_output(nsgaii_results):
             It is recommended that the weights are non-negative and sum to 1.
 
     Returns:
-        dict，包含 5 个最佳解及其对应的目标值，格式如下：
+        dict containing 5 best solutions and their corresponding objective values in the format:
             {
-                "best_solutions": <numpy 数组, shape=(5, n_var)>,
-                "best_function_values": <numpy 数组, shape=(5, n_obj)>
+                "best_solutions": <numpy array, shape=(5, n_var)>,
+                "best_function_values": <numpy array, shape=(5, n_obj)>
             }
     """
 
@@ -211,24 +211,24 @@ def choose_best_solution_from_nsgaii_output(nsgaii_results):
     first_two_solutions = nsgaii_results["best_solution"]
     first_two_objectives = nsgaii_results["function_value"]
 
-    # 将目标函数值归一化（min-max归一化），按列归一化
+    # Normalize objective function values (min-max normalization), normalize by column
     normalized_F = np.zeros_like(first_two_objectives)
     for j in range(first_two_objectives.shape[1]):
         objective_values = first_two_objectives[:, j]
         min_val = np.min(objective_values)
         max_val = np.max(objective_values)
 
-        # 如果所有值都相等，则直接设置为0避免除零错误
+        # If all values are equal, set to 0 to avoid division by zero
         if max_val - min_val == 0:
             normalized_F[:, j] = 0
         else:
             normalized_F[:, j] = (objective_values - min_val) / (max_val - min_val)
 
-    # 计算每个解的加权和；加权和越低表示整体性能越好（适用于最小化问题）
+    # Calculate weighted sum for each solution; lower weighted sum indicates better overall performance (for minimization problems)
     weights = np.array([1, 1, 1, 1, 1, 10])
     weighted_sums = np.dot(normalized_F, weights)
 
-    # 获取加权和最低的前 1 个解的索引
+    # Get indices of top 1 solutions with lowest weighted sums
     best_indices = np.argsort(weighted_sums)[:1]
 
     best_solutions = first_two_solutions[best_indices]
@@ -244,17 +244,17 @@ def choose_best_solution_from_nsgaii_output(nsgaii_results):
 
 def evaluate_person_objectives(solution, person_index, p_location, pid_need_guided, p_preference, spaces):
     """
-    针对一个候选解中的单个个体进行目标评价。
+    Evaluate objectives for a single individual in a candidate solution.
 
-    参数:
-        solution: 1D array，表示一个候选解，长度等于参与推荐的人数；
-        person_index: int，表示当前要评价的人的索引；
-        p_location, pid_need_guided, p_preference, spaces: 原来传给目标函数的其它参数；
-        objectives: dict，每个目标名称对应一个评价函数，
-                    每个评价函数要求能够接受单个推荐值进行评价。
+    Args:
+        solution: 1D array representing a candidate solution, length equals number of people being recommended
+        person_index: int indicating index of person being evaluated
+        p_location, pid_need_guided, p_preference, spaces: other parameters passed to objective functions
+        objectives: dict mapping objective names to evaluation functions,
+                   each evaluation function must accept a single recommendation value
 
-    返回:
-        np.array，包含当前目标下该人的各评价值，顺序与 objectives 字典中相同。
+    Returns:
+        np.array containing evaluation values for this person under each objective, ordered same as objectives dict
     """
 
     objectives = {
@@ -266,12 +266,12 @@ def evaluate_person_objectives(solution, person_index, p_location, pid_need_guid
     }
 
     person_value_vector = []
-    # 假设 candidate 中每个元素都是某个人的推荐（比如一个位置编号）
+    # Assume each element in candidate is a recommendation for someone (e.g. a location number)
     person_recommendation = solution
 
     for obj_name, eval_func in objectives.items():
-        # 这里假设 eval_func 能够针对单个推荐计算评价值，
-        # 例如：eval_temp(person_recommendation, p_location, pid_need_guided, p_preference, spaces)
+        # Assume eval_func can evaluate a single recommendation,
+        # e.g.: eval_temp(person_recommendation, p_location, pid_need_guided, p_preference, spaces)
         value = eval_func(person_recommendation, p_location, pid_need_guided, p_preference, spaces)
         person_value_vector.append(value)
 

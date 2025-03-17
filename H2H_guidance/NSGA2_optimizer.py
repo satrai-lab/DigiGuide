@@ -62,14 +62,14 @@ class Optimizer:
         res = minimize(self.problem, method, termination=('n_gen', n_gen), seed=seed, save_history=True)
         end = time.time()
 
-        # 使用 NonDominatedSorting 对结果进行非支配排序，并提取前两层的索引
+        # Use NonDominatedSorting to sort results and extract indices of first two fronts
         nds = NonDominatedSorting()
-        # 参数 n_stop_if_ranked=2 意味着排序只进行到第二层
+        # Parameter n_stop_if_ranked=2 means sorting only goes to second layer
         fronts = nds.do(res.F, n_stop_if_ranked=2)
-        # fronts 是一个列表，其中 fronts[0] 为第一层，fronts[1] 为第二层
+        # fronts is a list where fronts[0] is first layer, fronts[1] is second layer
         indices_first_two = np.concatenate(fronts) if len(fronts) > 0 else np.array([])
 
-        # 提取前两层的解、目标函数值和约束违背（如果有的话）
+        # Extract solutions, objective function values and constraint violations (if any) for first two fronts
         solutions_first_two = res.X[indices_first_two]
         function_values_first_two = res.F[indices_first_two]
         constraint_violation_first_two = res.CV[indices_first_two] if hasattr(res,
@@ -80,8 +80,8 @@ class Optimizer:
             "best_solution": res.X,
             "function_value": res.F,
             "constraint_violation": res.CV,
-            "first_two_front_solutions": solutions_first_two,  # 前两层的解
-            "first_two_front_function_values": function_values_first_two,  # 前两层对应的目标函数值
+            "first_two_front_solutions": solutions_first_two,  # Solutions from first two fronts
+            "first_two_front_function_values": function_values_first_two,  # Objective function values for first two fronts
             "first_two_front_constraint_violation": constraint_violation_first_two
         }
 

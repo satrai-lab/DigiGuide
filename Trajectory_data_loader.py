@@ -6,18 +6,18 @@ from datetime import datetime, timedelta
 class TrajectoryDataLoader:
     def __init__(self, trajectory_base_path):
         """
-        :param trajectory_base_path: 存放12个月份文件夹的根目录
+        :param trajectory_base_path: Root directory containing folders for 12 months
         """
         self.base_path = trajectory_base_path
-        # 缓存每个月的数据，键为月份字符串，如 "01", "02", ... "12"
+        # Cache data for each month, with keys as month strings like "01", "02", ... "12"
         self.month_data_cache = {}
 
     def load_month_data(self, month: str) -> pd.DataFrame:
         """
-        加载指定月份文件夹下所有 CSV 文件的数据，并合并为一个 DataFrame，
-        同时预处理并建立时间索引，加载后的数据会缓存在 self.month_data_cache 中。
-        :param month: 月份字符串，例如 "01"
-        :return: 预处理后的 DataFrame（索引为去除年份后的时间）
+        Load data from all CSV files in the specified month folder and merge them into a single DataFrame.
+        Preprocess and create a time index. The loaded data will be cached in self.month_data_cache.
+        :param month: Month string, e.g., "01"
+        :return: Preprocessed DataFrame (indexed by time without year)
         """
         if month in self.month_data_cache:
             return self.month_data_cache[month]
@@ -36,13 +36,13 @@ class TrajectoryDataLoader:
 
         month_df = pd.concat(df_list, ignore_index=True)
 
-        # 预处理：将 StartDateTime 转换为去除年份的时间
-        # 这里我们固定年份为1900，方便后续比较（注意：这假设查询时也采用相同的转换）
+        # Preprocessing: Convert StartDateTime to time without year
+        # Here we fix the year to 1900 for easier comparison later (Note: This assumes the same conversion is used during queries)
         month_df["TimeWithoutYear"] = pd.to_datetime(
             month_df["StartDateTime"].dt.strftime("1900-%m-%d %H:%M:%S"),
             format="1900-%m-%d %H:%M:%S"
         )
-        # 根据 TimeWithoutYear 排序，并设置为索引，以便后续利用索引快速切片
+        # Sort by TimeWithoutYear and set as index for efficient slicing using the index later
         month_df.sort_values(by="TimeWithoutYear", inplace=True)
         month_df.set_index("TimeWithoutYear", inplace=True)
 
@@ -51,36 +51,36 @@ class TrajectoryDataLoader:
 
     def get_filtered_data(self, query_time: datetime) -> pd.DataFrame:
         """
-        根据查询时间，过滤数据并返回每个 PersonID 最后出现的记录。
-        此处比较的是月份、日和时分秒（统一转换到固定年份1900），以利用预先构建的时间索引。
-        :param query_time: 查询时间（datetime 类型）
-        :return: 过滤后的 DataFrame
+        Filter data based on the query time and return the last record for each PersonID.
+        Here, we compare month, day, hour, minute, and second (all converted to the fixed year 1900) to utilize the pre-built time index.
+        :param query_time: Query time (datetime type)
+        :return: Filtered DataFrame
         """
-        # 使用 query_time 中的月份加载对应数据
+        # Load corresponding data using the month from query_time
         month = query_time.strftime("%m")
         df = self.load_month_data(month)
 
         if df.empty:
             return df
 
-        # 将查询时间转换为统一基准（1900年）的时间
+        # Convert query time to a unified baseline (year 1900)
         query_time_key = pd.to_datetime(query_time.strftime("1900-%m-%d %H:%M:%S"), format="1900-%m-%d %H:%M:%S")
         query_time_end_key = query_time_key + timedelta(minutes=30)
 
-        # 利用索引进行时间区间切片（这一步比遍历整列过滤效率高很多）
+        # Slice the time range using the index (this is much more efficient than filtering the entire column)
         filtered_df = df.loc[query_time_key:query_time_end_key].copy()
 
-        # 对过滤后的数据按照 StartDateTime 排序，再按 PersonID 分组，取每组的最后一条记录
+        # Sort the filtered data by StartDateTime, then group by PersonID and take the last record of each group
         latest_records = filtered_df.sort_values(by="StartDateTime").groupby("PersonID").last().reset_index()
         return latest_records
 
-# 使用示例
+# Example usage
 # if __name__ == "__main__":
-#     # 假设 base_path 是包含12个月份文件夹的目录
+#     # Assume base_path is the directory containing folders for 12 months
 #     base_path = "SmartSPEC/post-processing/trajectories_split_data"
 #     loader = TrajectoryDataLoader(base_path)
 #
-#     # 示例：以当前时间作为查询时间
+#     # Example: Use the current time as the query time
 #     now = datetime.now()
 #     result_df = loader.get_filtered_data(now)
 #     print(result_df)

@@ -1,33 +1,33 @@
 import pandas as pd
 import os
 
-# 读取 CSV 文件
-input_file = "D:\Programming\Projects\SmartSPEC\models\Drahi-X\V-0602\output\data.csv"  # 替换为你的文件路径
+# Read CSV file
+input_file = "D:\Programming\Projects\SmartSPEC\models\Drahi-X\V-0602\output\data.csv"  # Replace with your file path
 df = pd.read_csv(input_file, parse_dates=["StartDateTime", "EndDateTime"])
 
-# 按时间排序
+# Sort by time
 df = df.sort_values(by="StartDateTime")
 
-# 创建目标目录
+# Create target directory
 output_dir = "trajectories_split_data"
 os.makedirs(output_dir, exist_ok=True)
 
-# 按日期分组并写入不同文件
+# Group by date and write to different files
 for date, group in df.groupby(df["StartDateTime"].dt.date):
-    # 获取月份目录，例如 "2020-01"
+    # Get month folder, e.g., "2020-01"
     month_folder = os.path.join(output_dir, date.strftime("%m"))
     os.makedirs(month_folder, exist_ok=True)
 
-    # 生成文件名，例如 "2020-01-01.csv"
+    # Generate file name, e.g., "2020-01-01.csv"
     file_path = os.path.join(month_folder, f"{date.strftime('%d')}.csv")
 
-    # 再次按时间排序，确保当天数据的时间顺序正确
+    # Sort by time again to ensure the time order of the day's data is correct
     group = group.sort_values(by="StartDateTime")
 
-    # 将数据写入 CSV
+    # Write data to CSV
     group.to_csv(file_path, index=False)
 
-print("数据分割完成，已按月份和日期存储，并保证时间排序。")
+print("Data splitting completed, stored by month and date, and time order ensured.")
 
 import pandas as pd
 import os
@@ -35,40 +35,40 @@ from datetime import datetime, timedelta
 
 def find_latest_events_in_next_30min(base_time, data_dir="./trajectories_split_data"):
     """
-    在数据集中查找当前时间到未来 30 分钟内的所有数据，并只保留每个 PersonID 最后的出现记录。
+    Find all data from the current time to the next 30 minutes in the dataset, and keep only the last occurrence record for each PersonID.
 
-    :param base_time: datetime 对象，作为查询的基准时间
-    :param data_dir: 存储数据的文件夹路径
-    :return: 筛选后的 Pandas DataFrame
+    :param base_time: datetime object, used as the base time for the query
+    :param data_dir: Path to the folder where data is stored
+    :return: Filtered Pandas DataFrame
     """
-    # 确保 base_time 是 datetime 类型
+    # Ensure base_time is of datetime type
     if isinstance(base_time, str):
         base_time = datetime.strptime(base_time, "%Y-%m-%d %H:%M:%S")
 
-    # 计算 30 分钟后的时间
+    # Calculate the time 30 minutes later
     end_time = base_time + timedelta(minutes=30)
 
-    # 确定对应的 CSV 文件
+    # Determine the corresponding CSV file
     file_path = os.path.join(data_dir, base_time.strftime("%m"), base_time.strftime("%d") + ".csv")
 
-    # 如果文件不存在，直接返回空 DataFrame
+    # If the file does not exist, return an empty DataFrame
     if not os.path.exists(file_path):
-        print(f"文件 {file_path} 不存在，返回空数据集。")
+        print(f"File {file_path} does not exist, returning empty dataset.")
         return pd.DataFrame()
 
-    # 读取 CSV 文件
+    # Read CSV file
     df = pd.read_csv(file_path, parse_dates=["StartDateTime", "EndDateTime"])
 
-    # 筛选出 StartDateTime 在 [base_time, base_time + 30min] 之间的记录
+    # Filter records where StartDateTime is between [base_time, base_time + 30min]
     mask = (df["StartDateTime"] >= base_time) & (df["StartDateTime"] <= end_time)
     filtered_df = df.loc[mask]
 
-    # 按 PersonID 分组，每个 PersonID 只保留 StartDateTime 最大的一行（即最后出现的）
+    # Group by PersonID, keep only the record with the maximum StartDateTime for each PersonID
     latest_records = filtered_df.sort_values(by="StartDateTime").groupby("PersonID").last().reset_index()
 
     return latest_records
 
-# 示例调用
+# Example call
 # base_time = "2020-01-01 13:18:00"
 # result = find_latest_events_in_next_30min(base_time)
 # for index, row in result.iterrows():

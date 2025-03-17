@@ -8,6 +8,7 @@ class Space:
 
         self.room_num = room_num
         self.temperature = temperature
+        self.energy = 0
         self.setpoint = setpoint
         self.capacity = capacity
         if self.capacity == 0:
@@ -18,6 +19,10 @@ class Space:
         self.people_num = 0
         self.type = None
         self.sound_pressure = self.initial_noise
+
+    def update_environment(self, occupant_location, occupant_noise_level):
+        self.update_crowd_level(occupant_location)
+        self.update_noise_level(occupant_location, occupant_noise_level)
 
     def _count_people(self, occupant_location):
         occupant_count = 0
@@ -34,45 +39,45 @@ class Space:
         return self.crowd
 
     def update_noise_level(self, occupant_location, occupant_noise_level):
-        """基于声学公式的噪音等级计算"""
-        # 将基础噪音转换为声强
+        """Calculate noise level based on acoustic formula"""
+        # Convert base noise to sound intensity
         total_intensity = 10 ** (self.initial_noise / 10)
 
-        # 叠加每个人的噪音贡献
+        # Add noise contribution from each person
         for p_id, loc in occupant_location.items():
             if loc == self.room_num:
                 total_intensity += 10 ** (occupant_noise_level[p_id] / 10)
 
-        # 叠加每个人的噪音贡献
+        # Add noise contribution from each person
         # for person in range(self.people_num):
-        #     # 每个人的噪音贡献需保证非负
+        #     # Ensure individual noise contribution is non-negative
         #     individual_noise = max(np.random.normal(30, 15), 0)
         #     total_intensity += 10 ** (individual_noise / 10)
 
-        # 转换回分贝（避免除以零）
+        # Convert back to decibels (avoid division by zero)
         total_db = 10 * np.log10(total_intensity) if total_intensity > 0 else -np.inf
 
-        # 分级标准（可自定义）
+        # Classification thresholds (customizable)
         self.sound_pressure = total_db
         self.noise = np.digitize(total_db, [40, 55, 60]) + 1
 
         return self.noise
 
     def calculate_next_noise_level(self, num_people):
-        """基于声学公式的噪音等级计算"""
-        # 将基础噪音转换为声强
+        """Calculate noise level based on acoustic formula"""
+        # Convert base noise to sound intensity
         total_intensity = 10 ** (self.sound_pressure / 10)
 
-        # 叠加每个人的噪音贡献
+        # Add noise contribution from each person
         for person in range(num_people):
-            # 每个人的噪音贡献需保证非负
+            # Ensure individual noise contribution is non-negative
             individual_noise = max(np.random.normal(30, 0), 0)
             total_intensity += 10 ** (individual_noise / 10)
 
-        # 转换回分贝（避免除以零）
+        # Convert back to decibels (avoid division by zero)
         total_db = 10 * np.log10(total_intensity) if total_intensity > 0 else -np.inf
 
-        # 分级标准（可自定义）
+        # Classification thresholds (customizable)
         return np.digitize(total_db, [40, 55, 60]) + 1
 
 # class Space:

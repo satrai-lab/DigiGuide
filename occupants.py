@@ -172,24 +172,24 @@ class Participant:
 
         # comfort_list = {"crowd": None, "noise": None}
         comfort_dict = {}
-        # 拥挤舒适度正态分布参数
-        crowd_mean = 50  # 拥挤舒适度需求的均值（0-100%，50为适中）
-        crowd_std = 15  # 拥挤舒适度需求的标准差
+        # Parameters for crowd comfort normal distribution
+        crowd_mean = 50  # Mean value for crowd comfort requirement (0-100%, 50 is moderate)
+        crowd_std = 15  # Standard deviation for crowd comfort requirement
 
-        # 噪音舒适度正态分布参数
-        noise_mean = 50  # 噪音舒适度需求的均值（0-100分贝，45为适中）
-        noise_std = 10  # 噪音舒适度需求的标准差
+        # Parameters for noise comfort normal distribution  
+        noise_mean = 50  # Mean value for noise comfort requirement (0-100 decibels, 45 is moderate)
+        noise_std = 10  # Standard deviation for noise comfort requirement
 
-        # 随机生成拥挤舒适度需求
+        # Randomly generate crowd comfort requirement
         crowd_comfort = np.random.normal(crowd_mean, crowd_std)
-        crowd_comfort = np.clip(crowd_comfort, 0, 100)  # 限制范围为 0-100
-        crowd_level = np.digitize(crowd_comfort, [25, 50, 75]) + 1  # 1-4级
+        crowd_comfort = np.clip(crowd_comfort, 0, 100)  # Limit range to 0-100
+        crowd_level = np.digitize(crowd_comfort, [25, 50, 75]) + 1  # Level 1-4
         comfort_dict["crowd"] = crowd_level
 
-        # 随机生成噪音舒适度需求
+        # Randomly generate noise comfort requirement
         noise_comfort = np.random.normal(noise_mean, noise_std)
-        noise_comfort = np.clip(noise_comfort, 0, 100)  # 限制范围为 0-100
-        noise_level = np.digitize(noise_comfort, [25, 50, 75]) + 1  # 1-4级
+        noise_comfort = np.clip(noise_comfort, 0, 100)  # Limit range to 0-100
+        noise_level = np.digitize(noise_comfort, [25, 50, 75]) + 1  # Level 1-4
         comfort_dict["noise"] = noise_level
 
         return comfort_dict
@@ -225,7 +225,7 @@ class Participant:
         #     return
         # df = pd.read_csv(file_path, parse_dates=["StartDateTime", "EndDateTime"])
         #
-        # # **忽略年份，仅保留 "MM-DD HH:MM:SS" 格式**
+        # # **Ignore year, only keep "MM-DD HH:MM:SS" format**
         # df["TimeWithoutYear"] = df["StartDateTime"].dt.strftime("%m-%d %H:%M:%S")
         # query_time_str = time.strftime("%m-%d %H:%M:%S")
         # query_time_end_str = (time + timedelta(minutes=30)).strftime("%m-%d %H:%M:%S")
@@ -233,7 +233,7 @@ class Participant:
         # mask = (df["TimeWithoutYear"] >= query_time_str) & (df["TimeWithoutYear"] <= query_time_end_str)
         # filtered_df = df.loc[mask]
         #
-        # # **只保留每个 PersonID 最后出现的记录**
+        # # **Only keep the last record for each PersonID**
         # latest_records = filtered_df.sort_values(by="StartDateTime").groupby("PersonID").last().reset_index()
 
         latest_records = self.trajectory_loader.get_filtered_data(time)
@@ -383,8 +383,7 @@ class Participant:
         self.location = copy.deepcopy(next_location)
 
         for s in self.spaces.values():
-            s.update_crowd_level(self.location)
-            s.update_noise_level(self.location, self.noise)
+            s.update_environment(self.location, self.noise)
         self.result.update_distance(previous_location, next_location)
 
     def vote(self, time: datetime, temp: dict):
@@ -495,97 +494,3 @@ class Participant:
         for room_id in votes.keys():
             for p_id, vote in votes[room_id].items():
                 self.itc_loss[p_id] += abs(vote - atc[room_id])
-
-# class event_weight:
-#     """
-#     weights for the weighted sum algorithm. The weights should be self-adapted based on occupant selection
-#     """
-#
-#     def __init__(self, event_type, user_weight):
-#         self.event_type = event_type
-#         # weight is for generating options for users,
-#         # self.weight = np.array([1, 1, 1, 1, 0])
-#         self.weight = user_weight
-#
-#         # user_weight is the weight user uses to select one solution from the options
-#         # this weight is like the ground truth, so it doesn't change
-#         self.user_weight = user_weight
-#
-#     def choose_best_solution_per_person(self, best_solutions, p_location, pid_need_guided, p_preference, spaces):
-#
-#         n_candidates, n_persons = best_solutions["best_solutions_to_user"].shape
-#         best_candidate_indices = []
-#         best_recommendations = []
-#         best_person_objectives = []
-#
-#         all_candidate_objs = []
-#         for person_idx in range(n_persons):
-#             candidate_scores = []
-#             candidate_objs = []
-#             for cand_idx in range(n_candidates):
-#                 candidate_solution = best_solutions["best_solutions_to_user"][cand_idx]
-#                 # 计算该候选解中该人的目标评价向量
-#                 obj_vec = evaluate_person_objectives(candidate_solution, person_idx, p_location, pid_need_guided,
-#                                                      p_preference, spaces)
-#                 candidate_objs.append(obj_vec)
-#                 # 加权求和（假设目标越低越好）
-#                 score = np.dot(obj_vec, self.user_weight)
-#                 candidate_scores.append(score)
-#             candidate_scores = np.array(candidate_scores)
-#             best_idx = np.argmin(candidate_scores)
-#             best_candidate_indices.append(best_idx)
-#             best_recommendations.append(best_solutions["best_solutions_to_user"][best_idx, person_idx])
-#             best_person_objectives.append(candidate_objs[best_idx])
-#             all_candidate_objs.append(candidate_objs)
-#
-#         # self.update_weights_based_on_user_choice(best_person_objectives, all_candidate_objs)
-#
-#         return {
-#             "best_candidate_indices": best_candidate_indices,
-#             "best_recommendations": best_recommendations,
-#             "best_person_objectives": best_person_objectives
-#         }
-#
-#     def update_weights_based_on_user_choice(self, selected_objectives, candidate_objectives, learning_rate=0.1):
-#         """
-#         根据用户选择的选项对权重进行更新。
-#
-#         如果用户选择的选项在某个 objective 上的值比候选方案的平均值更低，
-#         则说明用户更在意这个 objective，因此该 objective 的权重将被提升。
-#
-#         参数:
-#             old_weights: numpy 数组，形状 (n_objectives,)，表示原来的权重向量。
-#             selected_objectives: numpy 数组，形状 (n_objectives,)，表示用户选择的选项的各个 objective 值。
-#             candidate_objectives: numpy 数组，形状 (n_candidates, n_objectives)，表示所有候选方案的 objective 值。
-#             learning_rate: float，学习率，控制更新步长，默认值 0.1。
-#
-#         返回:
-#             new_weights: numpy 数组，更新后的权重向量（归一化后所有元素之和为 1）。
-#         """
-#         epsilon = 1e-6  # 防止除零
-#
-#         # 对多个 selected_objectives 求平均，得到全局的目标向量
-#         selected_objectives_mean = np.mean(selected_objectives, axis=0)  # 结果形状为 (n_objectives,)
-#
-#         # 对候选方案的目标值取平均
-#         candidate_objectives_mean = np.mean(candidate_objectives, axis=0)  # 结果形状为 (n_objectives,)
-#
-#         # 防止candidate_objectives中有多个数据，也就是说guide的是多个人的情况下
-#         candidate_objectives_mean = np.mean(candidate_objectives_mean, axis=0)
-#
-#         # 计算差值：这里假设目标越小越好，如果用户选择的平均值比候选方案均值低，则说明该目标更在意
-#         diff = candidate_objectives_mean - selected_objectives_mean
-#
-#         # 根据差值归一化调整权重
-#         normalized_diff = diff / (np.abs(candidate_objectives_mean) + epsilon)
-#         new_weights = self.weight * (1 + learning_rate * normalized_diff)
-#
-#         # 防止负权重，并归一化
-#         new_weights = np.clip(new_weights, 0, None)
-#         new_weights = new_weights / np.sum(new_weights)
-#
-#         self.weight = new_weights
-#
-#
-# event_work = event_weight("work", np.array([1, 1, 1, 1, 0]))
-# event_meeting = event_weight("meeting", np.array([1.5, 1, 0, 0, 0.5]))
