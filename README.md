@@ -28,16 +28,13 @@ Here, we introduce two examples utilizing mathematical models for crowdedness an
   - **Noise level:**
   - Measured using Sound Pressure Level (SPL, in dB).
   - Aggregated noise from multiple sources (static background noise and occupant-generated sounds) is calculated using:
-    $$
-    L_{\Sigma} = 10 \log_{10} \left( 10^{\frac{L_1}{10}} + 10^{\frac{L_2}{10}} + \dots + 10^{\frac{L_n}{10}} \right)
-    $$
+    `L_Σ = 10 log10( 10^(L1/10) + 10^(L2/10) + … + 10^(Ln/10) )`
   - Sound level of each occupant is modeled in `occupant.py`.
 
 - **Crowdedness level:**
   - Calculated based on the number of occupants relative to room capacity:
-    $$
-    crowdedness = \frac{\text{occupant number}}{\text{room capacity}}
-    $$
+    `crowdedness = occupant number / room capacity`
+
   - Room capacity is estimated from room size and required area per occupant (e.g., office: 5 m²/person, meeting room: 2 m²/person).
 
 Simulators can also help on modeling environmental conditions. users just need to add interfaces with other simulators in the same file `spaces.py` as described above. 
