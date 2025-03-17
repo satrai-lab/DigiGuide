@@ -25,10 +25,10 @@ For example, by utilizing real-time sensing from sensors, users can process sens
 
 Here, we introduce two examples utilizing mathematical models for crowdedness and noise level estimations. These models are implemented in `update_crowd_level()` and `update_noise_level()`, respectively.
 
-  - **Noise level:**
+- **Noise level:**
   - Measured using Sound Pressure Level (SPL, in dB).
   - Aggregated noise from multiple sources (static background noise and occupant-generated sounds) is calculated using:
-    `L_Σ = 10 log10( 10^(L1/10) + 10^(L2/10) + … + 10^(Ln/10) )`
+  `L_Σ = 10 log10( 10^(L1/10) + 10^(L2/10) + … + 10^(Ln/10) )`
   - Sound level of each occupant is modeled in `occupant.py`.
 
 - **Crowdedness level:**
