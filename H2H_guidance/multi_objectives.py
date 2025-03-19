@@ -34,29 +34,66 @@ def eval_temp(solution, p_location, pid_need_guided, p_preferences, spaces, peop
 
 def eval_energy(solution, p_location, pid_need_guided, p_preferences, spaces, people_want_move):
     temperature_preference = {0: 21, 1: 23, 2: 25}
-    diff = 0
+    total_energy = 0
 
     space_name_options = sorted(list(spaces.keys()))
     index_to_space = {i: name for i, name in enumerate(space_name_options)}
-
-    max_diff_each_location = {}
-
+    
+    # Check if we have enough historical data
+    spaces_with_data = 0
+    for space_name in spaces:
+        space = spaces[space_name]
+        # Count spaces that have at least 2 data points for any non-zero temperature difference
+        if any(key > 0 and len(values) >= 2 for key, values in space.historical_energy_data.items()):
+            spaces_with_data += 1
+    
+    # Determine if we have enough historical data (at least 10% of spaces)
+    use_historical_data = spaces_with_data >= max(1, len(spaces) // 10)
+    
+    # Track energy consumption for each location
+    energy_per_location = {}
+    
     for i in range(len(solution)):
-        if solution[i] not in max_diff_each_location:
-
-            max_diff_each_location[solution[i]] = spaces[index_to_space[solution[i]]].setpoint - temperature_preference[
-                p_preferences[i]["thermal"]]
+        space_index = solution[i]
+        space_name = index_to_space[space_index]
+        space = spaces[space_name]
+        pref_temp = temperature_preference[p_preferences[i]["thermal"]]
+        
+        # Initialize energy for this location if not already done
+        if space_index not in energy_per_location:
+            if use_historical_data:
+                # Use historical data-based prediction
+                energy_per_location[space_index] = space.predict_energy_consumption(pref_temp)
+            else:
+                # Use simple temperature difference
+                diff = space.setpoint - pref_temp
+                energy_per_location[space_index] = diff if diff > 0 else 0
+                
+                # Add penalty for empty spaces
+                if space.setpoint == 30:
+                    energy_per_location[space_index] += 1
         else:
-            max_diff_each_location[solution[i]] = max(max_diff_each_location[solution[i]],
-                                                      spaces[index_to_space[solution[i]]].setpoint -
-                                                      temperature_preference[p_preferences[i]["thermal"]])
-        if spaces[index_to_space[solution[i]]].setpoint == 30:
-            # penalty to locate to an empty space
-            max_diff_each_location[solution[i]] += 1
-
-    for v in max_diff_each_location.values():
-        diff += v
-    return diff
+            # Update with maximum energy consumption for this location
+            if use_historical_data:
+                energy_per_location[space_index] = max(
+                    energy_per_location[space_index],
+                    space.predict_energy_consumption(pref_temp)
+                )
+            else:
+                diff = space.setpoint - pref_temp
+                current_energy = diff if diff > 0 else 0
+                if space.setpoint == 30:
+                    current_energy += 1  # penalty for empty spaces
+                
+                energy_per_location[space_index] = max(
+                    energy_per_location[space_index],
+                    current_energy
+                )
+    
+    # Sum up energy consumption from all locations
+    total_energy = sum(energy_per_location.values())
+    
+    return total_energy
 
 
 def eval_crowd(solution, p_location, pid_need_guided, p_preferences, spaces, people_want_move):

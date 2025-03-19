@@ -10,9 +10,9 @@ from result_collector import Result
 class CoSimulation:
     system = platform.system()
     if system == "Windows":
-        ep_path = Path(r'D:\Programming\EnergyPlus\EnergyPlusV22-2-0')
+        ep_path = Path(r'path/to/your/energyplus/installation')
     else:
-        ep_path = Path(r'/home/jun/EnergyPlus-22.2.0/')
+        ep_path = Path(r'path/to/your/energyplus/installation')
 
     def __init__(self, model_path, start_date: datetime, end_date: datetime, input_param: dict, output_param: dict,
                  sensation_collector: callable, sensation_aggregator: callable, hvac_controller: callable,
@@ -219,16 +219,49 @@ class CoSimulation:
             energy_cooling = 0
             energy_heating = 0
             energy_fan = 0
+            outdoor_temp = 0
+            
+            # Get outdoor temperature for historical data recording
+            if "temp_out" in self.ep_output_value and self.ep_output_value["temp_out"] is not None:
+                outdoor_temp = self.ep_output_value["temp_out"]
+                
+            # Record energy consumption for each space and update historical data
+            energy_by_zone = {}
             for key, value in self.ep_output_value.items():
                 if value is None:
                     continue
                 if "ec" in key:
+                    # Extract zone number if it's a zone-specific energy consumption
+                    zone_match = re.search(r'tz(\d+)', key)
+                    if zone_match:
+                        zone_num = int(zone_match.group(1))
+                        if zone_num not in energy_by_zone:
+                            energy_by_zone[zone_num] = 0
+                        energy_by_zone[zone_num] += value
+                        
                     if "clg" in key:
                         energy_cooling += value
                     elif "htg" in key:
                         energy_heating += value
                     elif "fan" in key:
                         energy_fan += value
+                        
+            # Update space objects with outdoor temperature and record energy consumption
+            for s_name, s_obj in self.spaces.items():
+                # Skip spaces that we don't track
+                if s_name == "Space 1 - 1" or s_name == "Space 2 - 4":
+                    continue
+                    
+                # Set outdoor temperature
+                s_obj.set_outdoor_temperature(outdoor_temp)
+                
+                # Get zone number for this space
+                zone_num = int(self.space_zone_map[s_name].lstrip("Thermal Zone"))
+                
+                # Record energy consumption if we have data for this zone
+                if zone_num in energy_by_zone:
+                    s_obj.record_energy_consumption(energy_by_zone[zone_num])
+                    
             self.evaluation_results.add_consumption(energy_cooling,
                                                     energy_heating, energy_fan, season)
 
@@ -243,7 +276,6 @@ class CoSimulation:
                     self.api.exchange.set_actuator_value(state, handle, 40)
                 elif "htg" in actuator:
                     self.api.exchange.set_actuator_value(state, handle, 0)
-
     # def is_date_between(self, year: int, month: int, day: int):
     #     """
     #     check if current date is between two datetime
@@ -255,3 +287,4 @@ class CoSimulation:
     #     """
     #     given_date = datetime(year, month, day)
     #     return self.start_date <= given_date <= self.end_date
+
